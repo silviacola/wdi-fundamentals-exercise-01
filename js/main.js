@@ -59,6 +59,12 @@ var flipCard = function(cardId) {
  flipCard(0);
  flipCard(2);
 
+var createBoard = function () {
+  for (var i = 0; i < cards.length; i++) {
+  var cardsElement = document.createElement('img');
+  cardElement.setAttribute('cardElement', src = "images/back.png");
+  }
+}
 
 //Added in unit 8
     //   var cardOne = cards[0];
