@@ -1,11 +1,37 @@
-// var cardOne = "queen";
-// var cardTwo = "queen";
-// var cardThree = "king";
-// var cardFour = "king";
-// console.log('User flipped ' + cardOne);
-// console.log('User flipped ' + cardFour);
+//Added in unit 8/9
+    // var cardOne = "queen";
+    // var cardTwo = "queen";
+    // var cardThree = "king";
+    // var cardFour = "king";
+    // console.log('User flipped ' + cardOne);
+    // console.log('User flipped ' + cardFour);
 
-var cards = ["queen", "queen", "king", "king"];
+    // var cards = ["queen", "queen", "king", "king"];
+    // var cardsInPlay = [];
+
+var cards = [
+  {
+    rank: "queen",
+    suit: "hearts",
+    cardImage: "images/queen-of-hearts.png"
+  },
+  {
+    rank: "queen",
+    suit: "diamonds",
+    cardImage: "images/queen-of-diamonds.png"
+  },
+  {
+    rank: "king",
+    suit: "hearts",
+    cardImage: "images/kings-of-hearts.png"
+  },
+  {
+    rank: "king",
+    suit: "diamonds",
+    cardImage: "images/king-of-diamonds.png"
+  }
+];
+
 var cardsInPlay = [];
 var checkForMatch = function() {
   if (cardsInPlay[0] === cardsInPlay[1]) {
@@ -23,8 +49,12 @@ var flipCard = function(cardId) {
   } else {
       alert("Sorry, try again!");
   }
-  console.log('User flipped ' + cards[cardId]);
-  cardsInPlay.push(cards[cardId]);
+  //changed cardsInPlay.push(cards[cardId]) with cards.rank but it's not working
+  console.log('User flipped ' + cards[cardsId].rank);
+  cardsInPlay.push(cards[cardsId].rank);
+  console.log(cards[cardsID].cardImage);
+  console.log(cards[cardsId].suit);
+
 };
  flipCard(0);
  flipCard(2);
