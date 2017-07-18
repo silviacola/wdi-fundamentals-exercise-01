@@ -48,7 +48,7 @@ var checkForMatch = function() {
 // from the cards array.
 var flipCard = function() {
   // declaring cardId - not sure
-  //var cardId = this.getAttribute('data-id');
+  document.getElementById('cardsId');
 
   // Displaying the card that was flipped over:
   // Updated with .rank to access the rank property of this object
@@ -69,40 +69,33 @@ var flipCard = function() {
   console.log(cards.suit[cardsId]);
 }
 // simulating the user flipping two cards
-flipCard(cards[0]);
-flipCard(cards[2]);
+// deleted in unit 11
+// flipCard(cards[0]);
+// flipCard(cards[2]);
 
-  // if (cardsInPlay.length === 2) {
-  //     console.log(console.length)
-  // } if (cardsInPlay[0] === cardsInPlay[1]) {
-  //     alert("You found a match!");
-  // } else {
-  //     alert("Sorry, try again!");
-  // }
-  // //changed cardsInPlay.push(cards[cardId]) with cards.rank but it's not working
-  // console.log('User flipped ' + cards[cardsId].rank);
-  // cardsInPlay.push(cards[cardsId].rank);
-  // console.log(cards[cardsID].cardImage);
-  // console.log(cards[cardsId].suit);
-
-// };
-//  flipCard(0);
-//  flipCard(2);
-
-// var createBoard = function () {
-//   for (var i = 0; i < cards.length; i++) {
-//   var cardsElement = document.createElement('img');
-//   cardElement.setAttribute('cardElement', src = "images/back.png");
-//   }
-// }
-
-//Added in unit 8
-    //
+var createBoard = function () {
+  for (var i = 0; i < cards.length; i++) {
+  // Need to create an img element and store it in the variable cardElement
+  var cardElement = document.createElement('img');
+  // use the setAtrribute() method to add a src attribute
+  // for the cardElement
+  cardElement.setAttribute('cardElement', src = "images/back.png");
+  // set the card's 'data-id' attribute to be
+  //the index of the current element, i (no quotes).
+  cardElement.setAttribute('data-id', i);
+  // when each card is created, use addEventListener method to add
+  //  click event to the cardElement. The function to run when user
+  // clicks is flipCard
+  cardElement.addEventListener('click', 'flipCard');
+  // use appendChild() method to append the current cardElement
+  // to the game board which as an id of game-board'
+  cardElement.appendChild('game-board');
+ }
+}
+gameboard();
 
 
-
-
-
+// INSTRUCTIONS
 //Write an if statement that checks to see if the length of the cardsInPlay array is 2.
 //For the condition, you can use the length property to find out how many items are in the cardsInPlay array and then use the === operator to see if the length is equal to 2.
 //Now we'll want to add logic that checks for equality between the two cards in the cardsInPlay array.
