@@ -21,7 +21,7 @@ var cards = [
   {
     rank: 'king',
     suit: 'hearts',
-    cardImage: 'images/kings-of-hearts.png'
+    cardImage: 'images/king-of-hearts.png'
   },
   {
     rank: 'king',
@@ -35,12 +35,14 @@ var cardsInPlay = [];
 
 var checkForMatch = function() {
   // Check for equality between the 2 cards in the cardsInPlay array
-  if (cardsInPlay[0] === cardsInPlay[2]) {
-    alert("You found a match!");
-    } else {
-        alert("Sorry, try again!");
+  if (cardsInPlay.length === 2) {
+    if (cardsInPlay[0] === cardsInPlay[1]) {
+      alert("You found a match!");
+      } else {
+          alert("Sorry, try again!");
       }
-};
+    }
+}
 
 // We won't want a check for a match until the user
 // has selected 2 cards.
@@ -58,11 +60,10 @@ var flipCard = function () {
   console.log(cards[cardId].suit);
   // adding that card to the cardsInPlay array
   cardsInPlay.push(cards[cardId].rank);
-  this.setAttribute('src', cards[cardID].cardImage);
-  if (cardsInPlay.length === 2) {
+  this.setAttribute('src', cards[cardId].cardImage);
+
   //calling the checkForMatch function
   checkForMatch();
-  }
 };
 
 // simulating the user flipping two cards
@@ -74,21 +75,28 @@ var createBoard = function () {
   for (var i = 0; i < cards.length; i++) {
   // Need to create an img element and store it in the variable cardElement
   var cardElement = document.createElement('img');
+
   // use the setAtrribute() method to add a src attribute
   // for the cardElement
   cardElement.setAttribute('src', "images/back.png");
+
   // set the card's 'data-id' attribute to be
   //the index of the current element, i (no quotes).
   cardElement.setAttribute('data-id', i);
+
   // when each card is created, use addEventListener method to add
-  //  click event to the cardElement. The function to run when user
+  // click event to the cardElement. The function to run when user
   // clicks is flipCard
-  cardElement.addEventListener('click', 'flipCard');
+  cardElement.addEventListener('click', flipCard);
+
   // use appendChild() method to append the current cardElement
   // to the game board which as an id of game-board'
-  document.getElementByID('game-board').appendChild(cardElement);
+  document.getElementById('game-board').appendChild(cardElement);
+
  }
-}
+
+};
+
 createBoard();
 
 
