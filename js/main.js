@@ -32,13 +32,13 @@ var cards = ["queen", "queen", "king", "king"];
 // this array will hold the cards that are in play
 var cardsInPlay = [];
 
-// var checkForMatch = function() {
-//   if (cardsInPlay[0] === cardsInPlay[1]) {
-//       console.log("You found a match!");
-//   } else {
-//       console.log("Sorry, try again.");
-//   }
-// };
+var checkForMatch = function() {
+  if (cardsInPlay[0] === cardsInPlay[2]) {
+    alert("You found a match!");
+    } else {
+        alert("Sorry, try again!");
+      }
+};
 
 // We won't want a check for a match until the user
 // has selected 2 cards.
@@ -53,11 +53,10 @@ var flipCard = function(cardsId) {
   if (cardsInPlay.length === 2) {
   console.log(cardsInPlay.length);
   // Check for equality between the 2 cards in the cardsInPlay array
-  } if (cardsInPlay[0] === cardsInPlay[2]) {
-    alert("You found a match!");
-    } else {
-        alert("Sorry, try again!");
-      }
+  }
+
+  //calling the checkForMatch function
+  checkForMatch();
 }
 // simulating the user flipping two cards
 flipCard(0);
