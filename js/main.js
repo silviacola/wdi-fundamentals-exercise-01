@@ -1,88 +1,96 @@
-//Added in unit 8/9
-    // var cardOne = "queen";
-    // var cardTwo = "queen";
-    // var cardThree = "king";
-    // var cardFour = "king";
-    // console.log('User flipped ' + cardOne);
-    // console.log('User flipped ' + cardFour);
+//Deleted as required by instructions in unit 8 and 9
+// var cardOne = "queen";
+// var cardTwo = "queen";
+// var cardThree = "king";
+// var cardFour = "king";
+// console.log('User flipped ' + cardOne);
+// console.log('User flipped ' + cardFour);
+var cards = ["queen", "queen", "king", "king"];
 
-    // var cards = ["queen", "queen", "king", "king"];
-    // var cardsInPlay = [];
+// var cards = {
+//     rank: "queen",
+//     suit: "hearts",
+//     cardImage: "images/queen-of-hearts.png"
+//   },
+//   {
+//     rank: "queen",
+//     suit: "diamonds",
+//     cardImage: "images/queen-of-diamonds.png"
+//   },
+//   {
+//     rank: "king",
+//     suit: "hearts",
+//     cardImage: "images/kings-of-hearts.png"
+//   },
+//   {
+//     rank: "king",
+//     suit: "diamonds",
+//     cardImage: "images/king-of-diamonds.png"
+//   }
+// ];
 
-var cards = [
-  {
-    rank: "queen",
-    suit: "hearts",
-    cardImage: "images/queen-of-hearts.png"
-  },
-  {
-    rank: "queen",
-    suit: "diamonds",
-    cardImage: "images/queen-of-diamonds.png"
-  },
-  {
-    rank: "king",
-    suit: "hearts",
-    cardImage: "images/kings-of-hearts.png"
-  },
-  {
-    rank: "king",
-    suit: "diamonds",
-    cardImage: "images/king-of-diamonds.png"
-  }
-];
-
+// this array will hold the cards that are in play
 var cardsInPlay = [];
-var checkForMatch = function() {
-  if (cardsInPlay[0] === cardsInPlay[1]) {
-      console.log("You found a match!");
-  } else {
-      console.log("Sorry, try again.");
-  }
-};
+// We need a variable to represent the 1st card the user flipped
+// Store the first item in cards in the variable cardOne
+var cardOne = cards[0];
+// Add cardOne to the cardsInPlay array
+  cardsInPlay.push(cardOne);
+  console.log('User flipped ' + cardOne);
 
-var flipCard = function(cardId) {
-  if (cardsInPlay.length === 2) {
-      console.log(console.length)
-  } if (cardsInPlay[0] === cardsInPlay[1]) {
-      alert("You found a match!");
-  } else {
-      alert("Sorry, try again!");
-  }
-  //changed cardsInPlay.push(cards[cardId]) with cards.rank but it's not working
-  console.log('User flipped ' + cards[cardsId].rank);
-  cardsInPlay.push(cards[cardsId].rank);
-  console.log(cards[cardsID].cardImage);
-  console.log(cards[cardsId].suit);
+var cardTwo = cards[2];
+  cardsInPlay.push(cardTwo);
+  console.log('User flipped ' + cardTwo);
 
-};
- flipCard(0);
- flipCard(2);
+// We won't want a check for a match until the user
+// has selected 2 cards.
+if (cardsInPlay.length === 2) {
+  console.log(cardsInPlay.length);
+  // Check for equality between the 2 cards in the cardsInPlay array
+  } if (cardsInPlay[0] === cardsInPlay[2]) {
+    alert("You found a match!");
+    } else {
+        alert("Sorry, try again!");
+      }
 
-var createBoard = function () {
-  for (var i = 0; i < cards.length; i++) {
-  var cardsElement = document.createElement('img');
-  cardElement.setAttribute('cardElement', src = "images/back.png");
-  }
-}
+
+// var checkForMatch = function() {
+//   if (cardsInPlay[0] === cardsInPlay[1]) {
+//       console.log("You found a match!");
+//   } else {
+//       console.log("Sorry, try again.");
+//   }
+// };
+
+// var flipCard = function(cardId) {
+//   if (cardsInPlay.length === 2) {
+//       console.log(console.length)
+//   } if (cardsInPlay[0] === cardsInPlay[1]) {
+//       alert("You found a match!");
+//   } else {
+//       alert("Sorry, try again!");
+//   }
+//   //changed cardsInPlay.push(cards[cardId]) with cards.rank but it's not working
+//   console.log('User flipped ' + cards[cardsId].rank);
+//   cardsInPlay.push(cards[cardsId].rank);
+//   console.log(cards[cardsID].cardImage);
+//   console.log(cards[cardsId].suit);
+
+// };
+//  flipCard(0);
+//  flipCard(2);
+
+// var createBoard = function () {
+//   for (var i = 0; i < cards.length; i++) {
+//   var cardsElement = document.createElement('img');
+//   cardElement.setAttribute('cardElement', src = "images/back.png");
+//   }
+// }
 
 //Added in unit 8
-    //   var cardOne = cards[0];
-    //     cardsInPlay.push(cardOne);
-    //     console.log('User flipped ' + cardOne);
-
-    //   var cardTwo = cards[2];
-    //     cardsInPlay.push(cardTwo);
-    //     console.log('User flipped ' + cardTwo);
+    //
 
 
-    // if (cardsInPlay.length === 2) {
-    //     console.log(console.length)
-    // } if (cardsInPlay[0] === cardsInPlay[1]) {
-    //     alert("You found a match!");
-    //  } else {
-    //     alert("Sorry, try again!");
-    //  }
 
 
 

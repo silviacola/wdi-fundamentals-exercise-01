@@ -37,7 +37,7 @@ a {
 }
 
 a:hover {
-  /* Your styles here */
+  /* Hover effect on the anchors in the nav */
   border-color: white;
 }
 h2 {
