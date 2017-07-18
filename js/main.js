@@ -31,28 +31,6 @@ var cards = ["queen", "queen", "king", "king"];
 
 // this array will hold the cards that are in play
 var cardsInPlay = [];
-// We need a variable to represent the 1st card the user flipped
-// Store the first item in cards in the variable cardOne
-var cardOne = cards[0];
-// Add cardOne to the cardsInPlay array
-  cardsInPlay.push(cardOne);
-  console.log('User flipped ' + cardOne);
-
-var cardTwo = cards[2];
-  cardsInPlay.push(cardTwo);
-  console.log('User flipped ' + cardTwo);
-
-// We won't want a check for a match until the user
-// has selected 2 cards.
-if (cardsInPlay.length === 2) {
-  console.log(cardsInPlay.length);
-  // Check for equality between the 2 cards in the cardsInPlay array
-  } if (cardsInPlay[0] === cardsInPlay[2]) {
-    alert("You found a match!");
-    } else {
-        alert("Sorry, try again!");
-      }
-
 
 // var checkForMatch = function() {
 //   if (cardsInPlay[0] === cardsInPlay[1]) {
@@ -62,19 +40,41 @@ if (cardsInPlay.length === 2) {
 //   }
 // };
 
-// var flipCard = function(cardId) {
-//   if (cardsInPlay.length === 2) {
-//       console.log(console.length)
-//   } if (cardsInPlay[0] === cardsInPlay[1]) {
-//       alert("You found a match!");
-//   } else {
-//       alert("Sorry, try again!");
-//   }
-//   //changed cardsInPlay.push(cards[cardId]) with cards.rank but it's not working
-//   console.log('User flipped ' + cards[cardsId].rank);
-//   cardsInPlay.push(cards[cardsId].rank);
-//   console.log(cards[cardsID].cardImage);
-//   console.log(cards[cardsId].suit);
+// We won't want a check for a match until the user
+// has selected 2 cards.
+var flipCard = function(cardsId) {
+
+  // Displaying the card that was flipped over:
+  console.log("User flipped " + cards[cardsId]);
+
+  // adding that card to the cardsInPlay array
+  cardsInPlay.push(cards[cardsId]);
+
+  if (cardsInPlay.length === 2) {
+  console.log(cardsInPlay.length);
+  // Check for equality between the 2 cards in the cardsInPlay array
+  } if (cardsInPlay[0] === cardsInPlay[2]) {
+    alert("You found a match!");
+    } else {
+        alert("Sorry, try again!");
+      }
+}
+// simulating the user flipping two cards
+flipCard(0);
+flipCard(2);
+
+  // if (cardsInPlay.length === 2) {
+  //     console.log(console.length)
+  // } if (cardsInPlay[0] === cardsInPlay[1]) {
+  //     alert("You found a match!");
+  // } else {
+  //     alert("Sorry, try again!");
+  // }
+  // //changed cardsInPlay.push(cards[cardId]) with cards.rank but it's not working
+  // console.log('User flipped ' + cards[cardsId].rank);
+  // cardsInPlay.push(cards[cardsId].rank);
+  // console.log(cards[cardsID].cardImage);
+  // console.log(cards[cardsId].suit);
 
 // };
 //  flipCard(0);
