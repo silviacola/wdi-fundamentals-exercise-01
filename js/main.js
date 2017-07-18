@@ -5,29 +5,30 @@
 // var cardFour = "king";
 // console.log('User flipped ' + cardOne);
 // console.log('User flipped ' + cardFour);
-var cards = ["queen", "queen", "king", "king"];
+// var cards = ["queen", "queen", "king", "king"];
 
-// var cards = {
-//     rank: "queen",
-//     suit: "hearts",
-//     cardImage: "images/queen-of-hearts.png"
-//   },
-//   {
-//     rank: "queen",
-//     suit: "diamonds",
-//     cardImage: "images/queen-of-diamonds.png"
-//   },
-//   {
-//     rank: "king",
-//     suit: "hearts",
-//     cardImage: "images/kings-of-hearts.png"
-//   },
-//   {
-//     rank: "king",
-//     suit: "diamonds",
-//     cardImage: "images/king-of-diamonds.png"
-//   }
-// ];
+var cards = [
+  {
+    rank: 'queen',
+    suit: 'hearts',
+    cardImage: 'images/queen-of-hearts.png'
+  },
+  {
+    rank: 'queen',
+    suit: 'diamonds',
+    cardImage: 'images/queen-of-diamonds.png'
+  },
+  {
+    rank: 'king',
+    suit: 'hearts',
+    cardImage: 'images/kings-of-hearts.png'
+  },
+  {
+    rank: 'king',
+    suit: 'diamonds',
+    cardImage: 'images/king-of-diamonds.png'
+  }
+];
 
 // this array will hold the cards that are in play
 var cardsInPlay = [];
@@ -42,13 +43,19 @@ var checkForMatch = function() {
 
 // We won't want a check for a match until the user
 // has selected 2 cards.
-var flipCard = function(cardsId) {
+// cardsId is the index number that is passed in when
+// the flipCard function is called to access this card
+// from the cards array.
+var flipCard = function() {
+  // declaring cardId - not sure
+  //var cardId = this.getAttribute('data-id');
 
   // Displaying the card that was flipped over:
-  console.log("User flipped " + cards[cardsId]);
+  // Updated with .rank to access the rank property of this object
+  console.log("User flipped " + cards[cardsId].rank);
 
   // adding that card to the cardsInPlay array
-  cardsInPlay.push(cards[cardsId]);
+  cardsInPlay.push(cards[cardsId].rank);
 
   if (cardsInPlay.length === 2) {
   console.log(cardsInPlay.length);
@@ -57,10 +64,13 @@ var flipCard = function(cardsId) {
 
   //calling the checkForMatch function
   checkForMatch();
+
+  console.log(cards.cardImage[cardsId]);
+  console.log(cards.suit[cardsId]);
 }
 // simulating the user flipping two cards
-flipCard(0);
-flipCard(2);
+flipCard(cards[0]);
+flipCard(cards[2]);
 
   // if (cardsInPlay.length === 2) {
   //     console.log(console.length)
